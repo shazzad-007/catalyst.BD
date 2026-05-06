@@ -3,192 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATALYST | Luxury Fashion Accessories</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-    
+    <title>CATALYST - Define Your Presence</title>
     <style>
-        :root {
-            --primary-gold: #c5b358; /* আপনার লোগোর গোল্ডেন শেড */
-            --dark-bg: #0a0a0a;
-            --card-bg: #141414;
-            --text-gray: #a0a0a0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Hind Siliguri', sans-serif; background-color: var(--dark-bg); color: #fff; line-height: 1.6; }
-        
-        /* নেভিগেশন বার */
-        nav { 
-            background: rgba(10, 10, 10, 0.98); 
-            padding: 15px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 4px 30px rgba(0,0,0,0.8); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            border-bottom: 1px solid rgba(197, 179, 88, 0.2);
-        }
-        .logo img { height: 60px; width: auto; transition: 0.3s; }
-        .logo img:hover { transform: scale(1.05); }
-        
-        .nav-links a { text-decoration: none; color: var(--text-gray); margin-left: 25px; font-weight: 500; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary-gold); }
-
-        /* হিরো ব্যানার */
-        .hero { 
-            height: 70vh; 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1491336477066-31156b5e4f35?auto=format&fit=crop&w=1350&q=80'); 
-            background-size: cover; 
-            background-position: center; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-        }
-        .hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(40px, 8vw, 60px); color: var(--primary-gold); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 10px; }
-        .hero-content p { font-size: clamp(14px, 4vw, 20px); color: #eee; letter-spacing: 3px; text-transform: uppercase; }
-
-        /* কালেকশন সেকশন */
-        .container { padding: 60px 5%; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 32px; color: var(--primary-gold); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 15px; }
-        .section-header div { width: 60px; height: 2px; background: var(--primary-gold); margin: auto; }
-
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        
-        /* প্রোডাক্ট কার্ড */
-        .card { 
-            background: var(--card-bg); 
-            border: 1px solid #222; 
-            overflow: hidden; 
-            transition: 0.5s; 
-        }
-        .card:hover { border-color: var(--primary-gold); transform: translateY(-5px); }
-        .card img { width: 100%; height: 350px; object-fit: cover; transition: 0.8s; opacity: 0.8; }
-        .card:hover img { transform: scale(1.1); opacity: 1; }
-
-        .card-info { padding: 25px; text-align: center; }
-        .card-info h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 10px; font-size: 18px; color: #fff; letter-spacing: 1px; }
-        .price { font-size: 18px; color: var(--primary-gold); font-weight: 700; margin-bottom: 20px; display: block; }
-
-        /* প্রিমিয়াম বাটন */
-        .buy-btn { 
-            background: transparent; 
-            color: var(--primary-gold); 
-            padding: 10px 30px; 
-            text-decoration: none; 
-            border: 1px solid var(--primary-gold); 
-            text-transform: uppercase; 
-            font-size: 12px;
-            letter-spacing: 2px;
-            font-weight: bold;
-            transition: 0.4s; 
-        }
-        .buy-btn:hover { background: var(--primary-gold); color: #000; }
-
-        /* ডিসকাউন্ট ব্যানার */
-        .promo-banner { background: var(--primary-gold); color: #000; padding: 50px 5%; text-align: center; margin: 40px 0; }
-        .promo-banner h2 { font-family: 'Montserrat', sans-serif; margin-bottom: 10px; text-transform: uppercase; }
-
-        /* কাস্টমার রিভিউ */
-        .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-        .review-card { background: #0f0f0f; padding: 25px; border-left: 3px solid var(--primary-gold); }
-        .review-card p { font-style: italic; color: var(--text-gray); font-size: 15px; }
-        .review-card h4 { margin-top: 15px; color: var(--primary-gold); font-size: 13px; text-transform: uppercase; }
-
-        /* ফুটার */
-        footer { background: #050505; color: #555; text-align: center; padding: 50px 0; border-top: 1px solid #1a1a1a; }
-        .footer-logo { color: var(--primary-gold); font-size: 24px; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; letter-spacing: 5px; }
+        /* আপনার সব ডিজাইন এখানে থাকবে */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #000; color: #fff; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #111; }
+        .logo img { height: 50px; }
+        .hero { text-align: center; padding: 100px 20px; background: url('b0610130.jpg') no-repeat center/cover; }
+        .hero h1 { font-size: 3rem; color: #d4af37; }
+        .products { display: flex; justify-content: space-around; padding: 50px; }
+        .product-item img { width: 200px; border-radius: 10px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="24463.jpeg">
+    <div class="logo">
         <img src="24463.jpeg" alt="CATALYST Logo">
     </div>
     <div class="nav-links">
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#" style="color: gold; margin-left: 20px; text-decoration: none;">Shop</a>
+        <a href="#" style="color: gold; margin-left: 20px; text-decoration: none;">About</a>
+        <a href="#" style="color: gold; margin-left: 20px; text-decoration: none;">Contact</a>
     </div>
 </nav>
 
 <div class="hero">
-    <div class="hero-content">
-        <h1>CATALYST</h1>
-        <p>Define Your Presence</p>
-    </div>
+    <h1>CATALYST</h1>
+    <p>Define Your Presence</p>
 </div>
 
-<div class="container">
-    <div class="section-header">
-        <h2>এক্সক্লুসিভ কালেকশন</h2>
-        <div></div>
+<h2 style="text-align: center; color: #d4af37;">এক্সক্লুসিভ কালেকশন</h2>
+
+<div class="products">
+    <div class="product-item">
+        <img src="shoe.jpeg" alt="Shoes">
+        <p>Premium Shoes</p>
     </div>
-
-    <div class="product-grid">
-        <div class="card">
-            <img src="shoe.jpg" alt="Premium Shoes">
-            <div class="card-info">
-                <h3>হ্যান্ডক্রাফটেড লেদার শু</h3>
-                <span class="price">৳ ৪,৫০০</span>
-                <a href="https://wa.me/8801XXXXXXXXX" class="buy-btn">অর্ডার করুন</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="bag.jpg" alt="Luxury Bag">
-            <div class="card-info">
-                <h3>এলিগ্যান্ট অফিস ব্যাগ</h3>
-                <span class="price">৳ ৬,২০০</span>
-                <a href="https://wa.me/8801XXXXXXXXX" class="buy-btn">অর্ডার করুন</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="wallet.jpg" alt="Slim Wallet">
-            <div class="card-info">
-                <h3>ক্লাসিক লেদার ওয়ালেট</h3>
-                <span class="price">৳ ১,৫০০</span>
-                <a href="https://wa.me/8801XXXXXXXXX" class="buy-btn">অর্ডার করুন</a>
-            </div>
-        </div>
+    <div class="product-item">
+        <img src="bag.jpeg" alt="Bag">
+        <p>Luxury Bag</p>
+    </div>
+    <div class="product-item">
+        <img src="wallet.jpeg" alt="Wallet">
+        <p>Slim Wallet</p>
     </div>
 </div>
-
-<div class="promo-banner">
-    <h2>ঈদ স্পেশাল অফার!</h2>
-    <p>যেকোনো কম্বো পারচেজে পাচ্ছেন <b>১৫% ফ্ল্যাট ডিসকাউন্ট</b>। প্রোমোকোড: <b>CATALYST15</b></p>
-</div>
-
-<div class="container" style="padding-top: 0;">
-    <div class="section-header">
-        <h2>ক্রেতাদের সন্তুষ্টি</h2>
-        <div></div>
-    </div>
-    <div class="reviews">
-        <div class="review-card">
-            <p>"ব্যাগটির কোয়ালিটি এবং ফিনিশিং একদম আন্তর্জাতিক মানের। ধন্যবাদ ক্যাটালিস্ট!"</p>
-            <h4>— আরিয়ান খান</h4>
-        </div>
-        <div class="review-card">
-            <p>"জুতাগুলো অনেক আরামদায়ক। লোগোর ডিজাইনটি প্রিমিয়াম অনুভূতি দেয়।"</p>
-            <h4>— ফয়সাল আহমেদ</h4>
-        </div>
-        <div class="review-card">
-            <p>"খুবই দ্রুত ডেলিভারি পেয়েছি। প্যাকেজিং ছিল চোখে পড়ার মতো।"</p>
-            <h4>— সাদিয়া হক</h4>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div class="footer-logo">CATALYST</div>
-    <p>&copy; ২০২৬ ক্যাটালিস্ট লাক্সারি ফ্যাশন | আপনার আভিজাত্যের সঙ্গী</p>
-</footer>
 
 </body>
 </html>
