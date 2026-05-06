@@ -7,75 +7,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root { --gold: #d4af37; --black: #0a0a0a; --white: #ffffff; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--black); color: var(--white); scroll-behavior: smooth; padding-bottom: 80px; }
+        :root { --gold: #d4af37; --black: #0a0a0a; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--black); color: white; scroll-behavior: smooth; padding-bottom: 80px; }
         
-        /* Navigation */
+        /* নেভিগেশন বার */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: rgba(0,0,0,0.9); position: fixed; width: 90%; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
         .logo img { height: 40px; }
-        .fb-top { color: var(--gold); text-decoration: none; font-weight: bold; font-size: 14px; }
 
-        /* Hero Section */
-        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('b0610130.jpg') no-repeat center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; margin-top: 60px; border-bottom: 2px solid var(--gold); }
-        .hero h1 { font-size: 3rem; color: var(--gold); margin: 0; letter-spacing: 5px; }
-        .shop-btn { margin-top: 20px; padding: 12px 35px; background: var(--gold); color: black; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
-        .shop-btn:hover { background: #fff; }
+        /* পেমেন্ট সেকশন যেখানে লোগো থাকবে */
+        .payment-info { background: #111; padding: 40px 5%; text-align: center; border-top: 1px solid var(--gold); }
+        .payment-logos img { height: 45px; background: white; padding: 8px; border-radius: 10px; margin: 10px; vertical-align: middle; }
 
-        /* Products */
-        .products-container { padding: 50px 5%; text-align: center; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .product-card { background: #111; padding: 20px; border-radius: 15px; border: 1px solid #333; transition: 0.3s; }
-        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .product-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
-        .price { color: var(--gold); font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
-        .order-btn { display: block; padding: 10px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .order-btn:hover { background: var(--gold); color: black; }
-
-        /* Payment Info */
-        .payment-info { background: #0f0f0f; padding: 40px 5%; text-align: center; border-top: 1px solid #333; }
-        .payment-logos img { height: 40px; background: white; padding: 8px; border-radius: 10px; margin: 10px; vertical-align: middle; }
-
-        /* Fixed Bottom Bar */
-        .fixed-contact { position: fixed; bottom: 0; width: 100%; background: #111; display: flex; justify-content: space-around; padding: 12px 0; border-top: 2px solid var(--gold); z-index: 2000; box-shadow: 0 -5px 15px rgba(0,0,0,0.5); }
-        .contact-item { text-decoration: none; color: white; font-size: 12px; text-align: center; flex: 1; }
+        /* নিচের ফিক্সড বার আইকনসহ */
+        .fixed-contact { position: fixed; bottom: 0; width: 100%; background: #111; display: flex; justify-content: space-around; padding: 12px 0; border-top: 2px solid var(--gold); z-index: 2000; }
+        .contact-item { text-decoration: none; color: white; font-size: 13px; text-align: center; }
         .contact-item i { display: block; font-size: 24px; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo"><img src="24463.jpeg" alt="Catalyst Logo"></div>
-    <a href="https://www.facebook.com/share/18XTpeWwFa/" target="_blank" class="fb-top">FACEBOOK</a>
+    <div class="logo"><img src="24463.jpeg" alt="Logo"></div>
+    <a href="https://www.facebook.com/share/18XTpeWwFa/" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:bold;">FACEBOOK</a>
 </nav>
 
-<div class="hero">
-    <h1>CATALYST</h1>
-    <p>Define Your Presence</p>
-    <a href="#shop" class="shop-btn">SHOP NOW</a>
-</div>
-
-<div id="shop" class="products-container">
-    <h2 style="color: var(--gold); letter-spacing: 2px;">OUR COLLECTION</h2>
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="shoe.jpeg" alt="Shoes">
-            <h3>Premium Leather Shoes</h3>
-            <div class="price">৳ ৩,৫০০</div>
-            <a href="https://wa.me/8801818818886?text=I'm interested in Premium Leather Shoes" class="order-btn">অর্ডার করতে ক্লিক করুন</a>
-        </div>
-        <div class="product-card">
-            <img src="bag.jpeg" alt="Bag">
-            <h3>Luxury Leather Bag</h3>
-            <div class="price">৳ ৫,২০০</div>
-            <a href="https://wa.me/8801818818886?text=I'm interested in Luxury Leather Bag" class="order-btn">অর্ডার করতে ক্লিক করুন</a>
-        </div>
-        <div class="product-card">
-            <img src="wallet.jpeg" alt="Wallet">
-            <h3>Executive Slim Wallet</h3>
-            <div class="price">৳ ১,২০০</div>
-            <a href="https://wa.me/8801818818886?text=I'm interested in Slim Wallet" class="order-btn">অর্ডার করতে ক্লিক করুন</a>
-        </div>
-    </div>
+<div style="padding-top: 100px; text-align: center;">
+    <h1 style="color: var(--gold);">CATALYST</h1>
+    <p>Premium Leather Products</p>
 </div>
 
 <div class="payment-info">
@@ -85,12 +43,12 @@
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Nagad_Logo.svg/1200px-Nagad_Logo.svg.png" alt="Nagad">
     </div>
     <p>বিকাশ/নগদ (পার্সোনাল): <strong>01670787453</strong></p>
-    <p style="font-size: 0.9rem; color: #888;">অর্ডার কনফার্ম করতে স্ক্রিনশট দিয়ে হোয়াটসঅ্যাপ করুন।</p>
+    <p>অর্ডার কনফার্ম করতে স্ক্রিনশট দিয়ে হোয়াটসঅ্যাপ করুন।</p>
 </div>
 
 <div class="fixed-contact">
     <a href="tel:+8801670787453" class="contact-item">
-        <i class="fas fa-phone-alt" style="color: var(--gold);"></i> কল করুন
+        <i class="fas fa-phone-alt" style="color:var(--gold);"></i> কল করুন
     </a>
     <a href="https://wa.me/8801818818886" class="contact-item">
         <i class="fab fa-whatsapp" style="color: #25D366;"></i> হোয়াটসঅ্যাপ
