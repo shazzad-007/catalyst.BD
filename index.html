@@ -1,546 +1,66 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalyst.BD | প্রিমিয়াম কালেকশন</title>
-    
-    <!-- SEO & Social Media Meta Tags -->
-    <meta name="description" content="Catalyst.BD - বাংলাদেশের নির্ভরযোগ্য অনলাইন শপ। প্রিমিয়াম কোয়ালিটির মামি ব্যাগ এবং ট্যাকটিক্যাল বুট কালেকশন।">
-    <meta property="og:title" content="Catalyst.BD | প্রিমিয়াম কালেকশন">
-    <meta property="og:description" content="প্রিমিয়াম ব্যাগ, ট্যাকটিক্যাল বুট এবং আরও অনেক কিছু — সরাসরি আপনার দরজায়।">
-    <meta property="og:image" content="logo.jpg">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #4A3B32;    /* Deep Coffee Brown */
-            --accent: #C5A880;     /* Soft Gold */
-            --bg-light: #FDFBF7;   /* Warm Cream */
-            --text-dark: #2C2520;
-            --white: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            object-fit: cover;
-        }
-
-        .brand-name {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--white);
-        }
-
-        .brand-name span {
-            color: var(--accent);
-        }
-
-        .nav-btn {
-            background-color: var(--accent);
-            color: var(--primary);
-            padding: 8px 18px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background-color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44,37,32,0.8), rgba(74,59,50,0.85)), url('hero-bg.jpg') no-repeat center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 25px;
-            color: #EAE5DF;
-        }
-
-        /* Tabs / Filter Navigation */
-        .tabs-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 40px 0 20px;
-            padding: 0 15px;
-        }
-
-        .tab {
-            padding: 10px 24px;
-            border: 2px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            cursor: pointer;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .tab.active, .tab:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        /* Product Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #EAE5DF;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        .product-price {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .view-btn {
-            margin-top: auto;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .view-btn:hover {
-            background-color: #352A24;
-        }
-
-        /* Modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #888;
-        }
-
-        .modal-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .modal h3 {
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        .modal p {
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 15px;
-        }
-
-        .modal-order-btn {
-            background-color: var(--accent);
-            color: var(--primary);
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-
-        .modal-order-btn:hover {
-            background-color: #B59870;
-        }
-
-        /* Order Form Section */
-        .order-section {
-            max-width: 600px;
-            margin: 60px auto;
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #EAE5DF;
-        }
-
-        .order-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #CCC;
-            border-radius: 6px;
-            font-size: 15px;
-            background-color: var(--bg-light);
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* Payment QR Area */
-        .payment-box {
-            background: #F5EFEB;
-            border: 2px dashed var(--accent);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 25px 0;
-        }
-
-        .qr-img {
-            width: 180px;
-            height: 180px;
-            margin: 15px 0;
-            border: 4px solid var(--white);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .submit-btn {
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 6px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #352A24;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: #EAE5DF;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-            font-size: 14px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catalyst.BD | প্রিমিয়াম কালেকশন</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    /* আপনার আগের পুরো স্টাইল এখানে রাখুন */
+  </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo-area">
-            <img src="logo.jpg" alt="Catalyst.BD Logo" class="logo-img">
-            <div class="brand-name">Catalyst<span>.BD</span></div>
-        </div>
-        <a href="#order-form-container" class="nav-btn">অর্ডার করুন</a>
-    </header>
+<!-- আপনার আগের NAV, HERO, WHY, PAYMENT, REVIEWS, ORDER, FOOTER রাখুন -->
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <h1>আপনার লাইফস্টাইল হোক প্রিমিয়াম</h1>
-        <p>সেরা মানের মামি ব্যাগ এবং ট্যাকটিক্যাল বুটের এক্সক্লুসিভ কালেকশন নিয়ে এলো ক্যাটালিস্ট বিডি।</p>
-    </section>
+<!-- ক্যাটালগ সেকশন -->
+<section class="catalogue" id="catalogue">
+  <h2 class="section-title">আমাদের কালেকশন</h2>
+  <div class="divider"></div>
+  <p class="section-sub">ক্যাটাগরি বেছে নিন</p>
 
-    <!-- Category Filter Tabs -->
-    <div class="tabs-container">
-        <button class="tab active" onclick="filterProducts(event, 'all')">সব প্রোডাক্ট</button>
-        <button class="tab" onclick="filterProducts(event, 'bag')">মামি ব্যাগ</button>
-        <button class="tab" onclick="filterProducts(event, 'boots')">ট্যাকটিক্যাল বুট</button>
+  <div class="tabs">
+    <button class="tab active" onclick="filterProducts('all')">সব পণ্য</button>
+    <button class="tab" onclick="filterProducts('handbag')">লেডিস হ্যান্ডব্যাগ</button>
+    <button class="tab" onclick="filterProducts('wallet')">ওয়ালেট</button>
+    <button class="tab" onclick="filterProducts('boot')">হাইকিং শু / বুট</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <!-- লেডিস হ্যান্ডব্যাগ -->
+    <div class="product-card" data-cat="handbag" onclick="openModal('handbag1')">
+      <img src="ladies-handbag-white.jpg" alt="লেডিস হ্যান্ডব্যাগ"/>
+      <h3>লেডিস হ্যান্ডব্যাগ — হোয়াইট</h3>
+      <p class="card-desc">ফ্যাশনেবল ও প্র্যাকটিক্যাল ডিজাইন। অফিস, পার্টি বা দৈনন্দিন ব্যবহারের জন্য আদর্শ।</p>
+      <div class="card-price">৳ ২,০২০ <span>৳ ৩,১০০</span></div>
+      <button class="card-btn">বিস্তারিত দেখুন</button>
     </div>
 
-    <!-- Product Grid Section -->
-    <main class="grid">
-        <!-- Product 1 -->
-        <div class="product-card" data-cat="bag">
-            <img src="bag_white.jpg" alt="Premium White Mommy Bag" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Premium White Mommy Bag</h3>
-                <div class="product-price">৳ ২,৪৫০</div>
-                <button class="view-btn" onclick="openModal(1)">বিস্তারিত দেখুন</button>
-            </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product-card" data-cat="boots">
-            <img src="boots_black.jpg" alt="Tactical Combat Boots" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Tactical Combat Boots - Black</h3>
-                <div class="product-price">৳ ৩,২০০</div>
-                <button class="view-btn" onclick="openModal(2)">বিস্তারিত দেখুন</button>
-            </div>
-        </div>
-    </main>
-
-    <!-- Product Details Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <img id="modalImg" src="" alt="" class="modal-img">
-            <h3 id="modalTitle"></h3>
-            <p id="modalDesc"></p>
-            <button class="modal-order-btn" onclick="modalOrderAction()">এই প্রোডাক্টটি অর্ডার করুন</button>
-        </div>
+    <!-- ওয়ালেট -->
+    <div class="product-card" data-cat="wallet" onclick="openModal('wallet1')">
+      <img src="leather-wallet-brown.jpg" alt="লেদার ওয়ালেট"/>
+      <h3>লেদার ওয়ালেট — ব্রাউন</h3>
+      <p class="card-desc">প্রিমিয়াম লেদার, RFID প্রোটেকশন সহ।</p>
+      <div class="card-price">৳ ১,৩৫০ <span>৳ ২,০৭০</span></div>
+      <button class="card-btn">বিস্তারিত দেখুন</button>
     </div>
 
-    <!-- Order Form Section -->
-    <section id="order-form-container" class="order-section">
-        <h2>অর্ডার কনফার্ম করুন</h2>
-        <form id="orderForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            
-            <div class="form-group">
-                <label for="oName">আপনার নাম *</label>
-                <input type="text" id="oName" name="Name" required placeholder="সম্পূর্ণ নাম লিখুন">
-            </div>
+    <div class="product-card" data-cat="wallet" onclick="openModal('wallet2')">
+      <img src="leather-wallet-black.jpg" alt="লেদার ওয়ালেট"/>
+      <h3>লেদার ওয়ালেট — ব্ল্যাক</h3>
+      <p class="card-desc">প্রিমিয়াম লেদার, RFID প্রোটেকশন সহ।</p>
+      <div class="card-price">৳ ১,৩৫০ <span>৳ ২,০৭০</span></div>
+      <button class="card-btn">বিস্তারিত দেখুন</button>
+    </div>
 
-            <div class="form-group">
-                <label for="oPhone">মোবাইল নম্বর *</label>
-                <input type="tel" id="oPhone" name="Phone" required placeholder="01XXXXXXXXX">
-            </div>
+    <!-- বুট ও অন্যান্য প্রোডাক্ট আপনার আগের কোড থেকে যোগ করুন -->
+  </div>
+</section>
 
-            <div class="form-group">
-                <label for="oAddress">পূর্ণাঙ্গ ঠিকানা *</label>
-                <input type="text" id="oAddress" name="Address" required placeholder="জেলা, থানা, রোড বা এলাকা">
-            </div>
+<!-- আপনার আগের মোডাল ও স্ক্রিপ্ট রাখুন -->
 
-            <div class="form-group">
-                <label for="oProduct">প্রোডাক্ট সিলেক্ট করুন *</label>
-                <select id="oProduct" name="Product" required>
-                    <option value="" disabled selected>একটি প্রোডাক্ট বেছে নিন</option>
-                    <option value="Mommy Bag - White">Premium White Mommy Bag - ৳২৪৫০</option>
-                    <option value="Tactical Boots - Black">Tactical Combat Boots - Black - ৳৩২০০</option>
-                </select>
-            </div>
-
-            <!-- bKash Payment QR Code Area -->
-            <div class="payment-box">
-                <h4>বিকাশ পেমেন্ট (সেন্ড মানি)</h4>
-                <p style="font-size: 14px; color: #666;">নিচের QR কোডটি স্ক্যান করে অথবা <strong>017XXXXXXXX</strong> নম্বরে ক্যাশ আউট/সেন্ড মানি করুন।</p>
-                <img src="bkash_qr.jpg" alt="bKash QR Code" class="qr-img">
-            </div>
-
-            <div class="form-group">
-                <label for="oTxnid">বিকাশ ট্রানজেকশন ID (TxnID) *</label>
-                <input type="text" id="oTxnid" name="TxnID" required placeholder="Example: BKA7X89H2">
-            </div>
-
-            <button type="submit" class="submit-btn">অর্ডার সাবমিট করুন</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Catalyst.BD. All Rights Reserved.</p>
-    </footer>
-
-    <!-- JavaScript Portfolio / Interactions -->
-    <script>
-        // প্রোডাক্ট ডাটাবেজ মডাল ও ফর্মের জন্য
-        const productsData = {
-            1: {
-                name: "Premium White Mommy Bag",
-                desc: "ভ্রমণ বা বাচ্চার সাথে বাইরে যাওয়ার জন্য সেরা ওয়াটারপ্রুফ এবং মাল্টি-পকেট প্রিমিয়াম মামি ব্যাগ। এতে রয়েছে থার্মাল পকেট যা দুধ গরম রাখতে সাহায্য করবে।",
-                img: "bag_white.jpg",
-                formValue: "Mommy Bag - White"
-            },
-            2: {
-                name: "Tactical Combat Boots - Black",
-                desc: "অত্যন্ত টেকসই, হাইকিং বা লং ট্যুরের জন্য আরামদায়ক এবং রাফ অ্যান্ড টাফ ব্যবহারের উপযোগী অ্যান্টি-স্লিপ ট্যাকটিক্যাল বুট।",
-                img: "boots_black.jpg",
-                formValue: "Tactical Boots - Black"
-            }
-        };
-
-        let currentActiveProductId = null;
-
-        // প্রোডাক্ট ফিল্টারিং ফাংশন (বাগ ফিক্সড)
-        function filterProducts(e, cat) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            e.currentTarget.classList.add('active');
-
-            document.querySelectorAll('.product-card').forEach(card => {
-                if (cat === 'all' || card.dataset.cat === cat) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // মডাল ওপেন করার ফাংশন
-        function openModal(id) {
-            const p = productsData[id];
-            if(p) {
-                currentActiveProductId = id;
-                document.getElementById('modalImg').src = p.img;
-                document.getElementById('modalImg').alt = p.name;
-                document.getElementById('modalTitle').innerText = p.name;
-                document.getElementById('modalDesc').innerText = p.desc;
-                document.getElementById('productModal').style.display = 'flex';
-            }
-        }
-
-        // মডাল বন্ধ করার ফাংশন
-        function closeModal() {
-            document.getElementById('productModal').style.display = 'none';
-        }
-
-        // মডাল থেকে সরাসরি অর্ডারে নিয়ে যাওয়ার ও অটো-সিলেক্ট করার ফাংশন (নতুন UX ফিচার)
-        function modalOrderAction() {
-            if(currentActiveProductId) {
-                const p = productsData[currentActiveProductId];
-                const selectElement = document.getElementById('oProduct');
-                selectElement.value = p.formValue;
-            }
-            closeModal();
-            document.getElementById('order-form-container').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // মডালের বাইরে ক্লিক করলে মডাল বন্ধ হওয়া
-        window.onclick = function(event) {
-            const modal = document.getElementById('productModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+</body>
+</html>
 </body>
 </html>
