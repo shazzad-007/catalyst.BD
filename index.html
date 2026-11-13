@@ -72,6 +72,9 @@
     .card-visual{position:relative;height:190px;background:linear-gradient(135deg,#2E1A0E 0%,#4A2C17 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold);padding:16px;text-align:center}
     .card-visual .emoji{font-size:2.6rem;margin-bottom:6px}
     .card-visual .cat-tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#D4C4B5}
+    .card-visual img.prod-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .card-stock{display:inline-block;font-size:.74rem;font-weight:600;padding:2px 8px;border-radius:999px;background:#eef7f1;color:#1b6e3a;margin-bottom:8px}
+    .card-stock.out{background:#fdecea;color:#b42318}
     .card-badge{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--white);font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px}
     .card-body{padding:18px 16px 16px}
     .card-body h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--brown);margin-bottom:6px}
@@ -190,7 +193,7 @@
   </div>
 
   <!-- HERO -->
-<!-- =====================================================================
+  <!-- =====================================================================
   Catalyst.BD  —  3D Animated Hero (drop-in)
   কীভাবে বসাবেন:
   1) index.html এ পুরনো <section class="hero"> ... </section> পুরোটা মুছে
@@ -535,10 +538,12 @@
         id: "pod1",
         cat: "pod",
         badge: "HOT",
+        image: "images/xros-mini.jpg",
         emoji: "🔋",
         name: "Xros Mini Pod Kit",
         price: 2450,
         oldPrice: 2850,
+        stock: 12,
         desc: "১০০০mAh ব্যাটারি, Type-C ফাস্ট চার্জিং এবং লিক-প্রুফ পড।",
         features: ["1000mAh বিল্ট-ইন ব্যাটারি", "0.8ohm / 1.2ohm পড সাপোর্ট", "১০০% অথেনটিক স্ক্র্যাচ কোড"]
       },
@@ -546,10 +551,12 @@
         id: "pod2",
         cat: "pod",
         badge: "NEW",
+        image: "images/caliburn-g3.jpg",
         emoji: "💨",
         name: "Caliburn G3 Pod System",
         price: 2790,
         oldPrice: 3200,
+        stock: 8,
         desc: "OLED স্ক্রিন ও এয়ারফ্লো কন্ট্রোলসহ প্রিমিয়াম পড সিস্টেম।",
         features: ["25W সর্বোচ্চ আউটপুট", "৯০০mAh ব্যাটারি", "সল্ট নিক ও ফ্রি-বেস সাপোর্ট"]
       },
@@ -557,10 +564,12 @@
         id: "liq1",
         cat: "liquid",
         badge: "POPULAR",
+        image: "images/mango-ice.jpg",
         emoji: "🥭",
         name: "30ml Salt Nic — Mango Ice",
         price: 1150,
         oldPrice: 1350,
+        stock: 25,
         desc: "রিফ্রেশিং পাকা আম ও কুলিং মেন্থল ফ্লেভার (35mg / 50mg)।",
         features: ["৩০ মিলি অরিজিনাল বোতল", "35mg ও 50mg স্টক আছে", "স্মুথ থ্রোট হিট"]
       },
@@ -568,10 +577,12 @@
         id: "liq2",
         cat: "liquid",
         badge: "",
+        image: "images/grape-mint.jpg",
         emoji: "🍇",
         name: "30ml Salt Nic — Grape Mint",
         price: 1150,
         oldPrice: 1350,
+        stock: 15,
         desc: "ডার্ক গ্রেপ ও ফ্রেশ মিন্টের চমৎকার ব্যালেন্স।",
         features: ["৩০ মিলি অরিজিনাল বোতল", "35mg ও 50mg", "পড ডিভাইসের জন্য উপযুক্ত"]
       },
@@ -579,10 +590,12 @@
         id: "coil1",
         cat: "coil",
         badge: "",
+        image: "images/pod-coil.jpg",
         emoji: "⚙️",
         name: "Replacement Pod Cartridge (২ পিস)",
         price: 550,
         oldPrice: 650,
+        stock: 40,
         desc: "Xros ও Caliburn সিরিজের জন্য অরিজিনাল মেশ পড কার্টিজ।",
         features: ["০.৮ ওহম মেশ কয়েল", "২টি কার্টিজ প্রতি প্যাক", "দীর্ঘস্থায়ী ফ্লেভার"]
       }
@@ -629,9 +642,15 @@
       productGrid.innerHTML = PRODUCTS.map((p) => {
         const isHidden = filter !== "all" && p.cat !== filter ? "hidden" : "";
         const badgeHtml = p.badge ? `<span class="card-badge">${p.badge}</span>` : "";
+        const imgHtml = p.image
+          ? `<img class="prod-img" src="${p.image}" alt="${p.name}" onerror="this.style.display='none'"/>`
+          : "";
+        const stockText = p.stock > 0 ? `স্টক: ${p.stock} পিস` : "স্টক শেষ";
+        const stockClass = p.stock > 0 ? "card-stock" : "card-stock out";
         return `
           <div class="product-card ${isHidden}" data-id="${p.id}">
             <div class="card-visual">
+              ${imgHtml}
               ${badgeHtml}
               <div class="emoji">${p.emoji}</div>
               <div class="cat-tag">${p.cat.toUpperCase()}</div>
@@ -639,6 +658,7 @@
             <div class="card-body">
               <h3>${p.name}</h3>
               <p class="card-desc">${p.desc}</p>
+              <span class="${stockClass}">${stockText}</span>
               <div class="card-price">৳ ${p.price} <span>৳ ${p.oldPrice}</span></div>
               <button type="button" class="card-btn">বিস্তারিত দেখুন</button>
             </div>
